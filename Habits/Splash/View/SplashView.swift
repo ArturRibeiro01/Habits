@@ -14,9 +14,9 @@ struct SplashView: View {
                         .scaledToFit()
                         .frame(
                             maxWidth: .infinity ,
-                            maxHeight: .infinity
+                            maxHeight: .infinity,
                         )
-                        .background(Color("PrimaryColor"))
+                        .background(Color("ColorPrimary"))
                 }.ignoresSafeArea()
             case .goToSignInScreen :
                 Text("SignIn...")
