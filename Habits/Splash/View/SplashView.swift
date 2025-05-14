@@ -33,7 +33,7 @@ extension SplashView {
                     maxWidth: .infinity,
                     maxHeight: .infinity
                 )
-                .background(Color("ColorPrimary"))
+                .background(Color("ColorBackground"))
                 .ignoresSafeArea()
             
             if let error = error {
