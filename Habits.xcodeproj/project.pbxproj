@@ -6,14 +6,39 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		750745B72DD4297E00EBF3C8 /* HabitsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745B52DD4297E00EBF3C8 /* HabitsApp.swift */; };
+		750745B82DD4297E00EBF3C8 /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745AD2DD4297E00EBF3C8 /* SplashUIState.swift */; };
+		750745B92DD4297E00EBF3C8 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745AF2DD4297E00EBF3C8 /* SplashView.swift */; };
+		750745BA2DD4297E00EBF3C8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745B12DD4297E00EBF3C8 /* SplashViewModel.swift */; };
+		750745BB2DD4297E00EBF3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750745B42DD4297E00EBF3C8 /* Assets.xcassets */; };
+		750745C92DD42D1900EBF3C8 /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745C82DD42D1900EBF3C8 /* SplashViewRouter.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		750745AD2DD4297E00EBF3C8 /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
+		750745AF2DD4297E00EBF3C8 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		750745B12DD4297E00EBF3C8 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		750745B42DD4297E00EBF3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		750745B52DD4297E00EBF3C8 /* HabitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsApp.swift; sourceTree = "<group>"; };
+		750745C82DD42D1900EBF3C8 /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
 		756C54562DD1698A00EFE89B /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		756C54582DD1698A00EFE89B /* Habits */ = {
+		750745BD2DD429DE00EBF3C8 /* Model */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Habits;
+			path = Model;
+			sourceTree = "<group>";
+		};
+		750745BE2DD429F100EBF3C8 /* View */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = View;
+			sourceTree = "<group>";
+		};
+		750745BF2DD429FA00EBF3C8 /* ViewModel */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -29,10 +54,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		750745AE2DD4297E00EBF3C8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				750745AD2DD4297E00EBF3C8 /* SplashUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		750745B02DD4297E00EBF3C8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				750745AF2DD4297E00EBF3C8 /* SplashView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		750745B22DD4297E00EBF3C8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				750745B12DD4297E00EBF3C8 /* SplashViewModel.swift */,
+				750745C82DD42D1900EBF3C8 /* SplashViewRouter.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		750745B32DD4297E00EBF3C8 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				750745AE2DD4297E00EBF3C8 /* Model */,
+				750745B02DD4297E00EBF3C8 /* View */,
+				750745B22DD4297E00EBF3C8 /* ViewModel */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		750745B62DD4297E00EBF3C8 /* Habits */ = {
+			isa = PBXGroup;
+			children = (
+				750745BC2DD429B800EBF3C8 /* SignIn */,
+				750745B32DD4297E00EBF3C8 /* Splash */,
+				750745B42DD4297E00EBF3C8 /* Assets.xcassets */,
+				750745B52DD4297E00EBF3C8 /* HabitsApp.swift */,
+			);
+			path = Habits;
+			sourceTree = "<group>";
+		};
+		750745BC2DD429B800EBF3C8 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				750745BF2DD429FA00EBF3C8 /* ViewModel */,
+				750745BE2DD429F100EBF3C8 /* View */,
+				750745BD2DD429DE00EBF3C8 /* Model */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
 		756C544D2DD1698900EFE89B = {
 			isa = PBXGroup;
 			children = (
-				756C54582DD1698A00EFE89B /* Habits */,
+				750745B62DD4297E00EBF3C8 /* Habits */,
 				756C54572DD1698A00EFE89B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -61,7 +142,9 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				756C54582DD1698A00EFE89B /* Habits */,
+				750745BD2DD429DE00EBF3C8 /* Model */,
+				750745BE2DD429F100EBF3C8 /* View */,
+				750745BF2DD429FA00EBF3C8 /* ViewModel */,
 			);
 			name = Habits;
 			packageProductDependencies = (
@@ -109,6 +192,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750745BB2DD4297E00EBF3C8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750745C92DD42D1900EBF3C8 /* SplashViewRouter.swift in Sources */,
+				750745B72DD4297E00EBF3C8 /* HabitsApp.swift in Sources */,
+				750745B82DD4297E00EBF3C8 /* SplashUIState.swift in Sources */,
+				750745B92DD4297E00EBF3C8 /* SplashView.swift in Sources */,
+				750745BA2DD4297E00EBF3C8 /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
