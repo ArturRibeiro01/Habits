@@ -10,7 +10,7 @@ struct SignInView: View {
     @State var navigationHidden: Bool = true
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView (showsIndicators: false){
                 VStack(alignment: .center, spacing: 20) {
                     Spacer(minLength: 36)
@@ -75,23 +75,15 @@ extension SignInView {
     }
     
     var registerLink: some View {
-        VStack{
+        VStack {
             Text("Ainda não possui uma conta?")
-                .padding(.top,48).foregroundColor(Color.gray)
+                .padding(.top, 48)
+                .foregroundColor(Color.gray)
             
-            ZStack {
-                NavigationLink(
-                    destination: Text("Tela de Cadastro"),
-                    tag: 1,
-                    selection: $action
-                ) {
-                    EmptyView()
-                }
-                
-                Button( "cadastre-se"){
-                    self.action = 1
-                }
-
+            NavigationLink(destination: Text("Tela de Cadastro")) {
+                Text("Tela de Cadastro")
+                    .foregroundColor(Color.gray)
+                    
             }
         }
     }
