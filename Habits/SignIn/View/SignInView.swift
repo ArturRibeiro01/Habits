@@ -10,67 +10,79 @@ struct SignInView: View {
     @State var navigationHidden: Bool = true
     
     var body: some View {
-        NavigationStack {
-            ScrollView (showsIndicators: false){
-                VStack(alignment: .center, spacing: 20) {
-                    Spacer(minLength: 36)
-                    VStack(alignment: .center, spacing: 8) {
-            
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.horizontal,48)
-                        
-                        Text("Login")
-                            .foregroundColor(Color("ColorPrimary"))
-                            .font(Font.system(.title).bold())
-                        
-                        numberField
-                        passwordField
-                        enterButton
-                        registerLink
-                        
-                        Text("Copyrights @ sei la")
-                            .foregroundColor(Color.gray)
-                            .font(Font.system(size: 12).bold())
-                            .padding(.top, 16)
+        ZStack {
+            if case .goToHomeScreen = viewModel.uiState {
+                Text("Tela Principal")
+            } else {
+                NavigationStack {
+                    ScrollView(showsIndicators: false) {
+                        VStack(alignment: .center, spacing: 20) {
+                            Spacer(minLength: 36)
+                            
+                            VStack(alignment: .center, spacing: 8) {
+                                Image("logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(.horizontal, 48)
+                                
+                                Text("Login")
+                                    .foregroundColor(Color("ColorPrimary"))
+                                    .font(Font.system(.title).bold())
+                                
+                                numberField
+                                passwordField
+                                enterButton
+                                registerLink
+                                
+                                Text("Copyrights @ sei la")
+                                    .foregroundColor(Color.gray)
+                                    .font(.system(size: 12).bold())
+                                    .padding(.top, 16)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .padding(.horizontal, 24)
+                        .background(Color.white)
+                        .navigationBarTitle("Login", displayMode: .inline)
+                        .navigationBarHidden(navigationHidden)
                     }
-                }.frame (
-                    maxWidth: .infinity,
-                    maxHeight: .infinity
-                    
-                ).padding (
-                    .horizontal, 24)
-                .background(Color.white)
-                .navigationBarTitle(
-                    "Login",
-                    displayMode: .inline )
-                .navigationBarHidden(navigationHidden)
-            }.onAppear {
-                self.navigationHidden = true
-            }.onDisappear{
-                self.navigationHidden = false
+                    .onAppear { self.navigationHidden = true }
+                    .onDisappear { self.navigationHidden = false }
+                }
             }
-        
         }
-
-
     }
 }
 
 extension SignInView {
     var numberField: some View {
         TextField("Email", text: $email)
-            .border(Color.colorPrimary)
+            .keyboardType(.emailAddress)
+            .autocapitalization(.none)
+            .padding()
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(8)
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("ColorPrimary")))
     }
     
     var passwordField: some View {
         SecureField("Senha", text: $password)
-            .border(Color.colorPrimary)
+            .padding()
+            .background(Color.gray.opacity(0.1))
+            .cornerRadius(8)
+            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color("ColorPrimary")))
     }
     
     var enterButton: some View {
-        Button("Entrar"){
+        Button(action: {
+            viewModel.signIn(email: email, password: password)
+        }) {
+            Text("Entrar")
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .padding()
+                .background(Color("ColorPrimary"))
+                .cornerRadius(8)
         }
     }
     
@@ -82,8 +94,8 @@ extension SignInView {
             
             NavigationLink(destination: Text("Tela de Cadastro")) {
                 Text("Tela de Cadastro")
-                    .foregroundColor(Color.gray)
-                    
+                    .foregroundColor(Color("ColorPrimary"))
+                    .bold()
             }
         }
     }
@@ -91,6 +103,5 @@ extension SignInView {
 
 #Preview {
     let viewModel = SignInViewModel()
-    let signIn = SignInView(viewModel: viewModel)
-    return signIn
+    return SignInView(viewModel: viewModel)
 }
