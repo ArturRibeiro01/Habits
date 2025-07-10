@@ -12,7 +12,7 @@ struct SignInView: View {
     var body: some View {
         ZStack {
             if case .goToHomeScreen = viewModel.uiState {
-                Text("Tela Principal")
+                viewModel.homeView()
             } else {
                 NavigationStack {
                     ScrollView(showsIndicators: false) {
@@ -38,6 +38,18 @@ struct SignInView: View {
                                     .foregroundColor(Color.gray)
                                     .font(.system(size: 12).bold())
                                     .padding(.top, 16)
+                            }
+                            
+                            if case SignInUIState.error(
+                                let value
+                            ) = viewModel.uiState {
+                                Text("")
+                                    .alert(isPresented: .constant(true)){
+                                        Alert(
+                                            title: Text("Alert"),
+                                            message: Text(value),
+                                            dismissButton: .default(Text("OK")))
+                                    }
                             }
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)

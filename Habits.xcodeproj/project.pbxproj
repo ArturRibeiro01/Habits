@@ -13,6 +13,8 @@
 		750745BA2DD4297E00EBF3C8 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745B12DD4297E00EBF3C8 /* SplashViewModel.swift */; };
 		750745BB2DD4297E00EBF3C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 750745B42DD4297E00EBF3C8 /* Assets.xcassets */; };
 		750745C92DD42D1900EBF3C8 /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750745C82DD42D1900EBF3C8 /* SplashViewRouter.swift */; };
+		7510F91E2DD84ECC00D97B95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510F91D2DD84ECC00D97B95 /* HomeView.swift */; };
+		7510F9202DD84EE200D97B95 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7510F91F2DD84EE200D97B95 /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		750745B42DD4297E00EBF3C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		750745B52DD4297E00EBF3C8 /* HabitsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsApp.swift; sourceTree = "<group>"; };
 		750745C82DD42D1900EBF3C8 /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
+		7510F91D2DD84ECC00D97B95 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7510F91F2DD84EE200D97B95 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		756C54562DD1698A00EFE89B /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -39,6 +43,11 @@
 		750745BF2DD429FA00EBF3C8 /* ViewModel */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7510F91A2DD84C6E00D97B95 /* Model */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -92,6 +101,7 @@
 		750745B62DD4297E00EBF3C8 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
+				7510F9192DD84C4200D97B95 /* Home */,
 				750745BC2DD429B800EBF3C8 /* SignIn */,
 				750745B32DD4297E00EBF3C8 /* Splash */,
 				750745B42DD4297E00EBF3C8 /* Assets.xcassets */,
@@ -108,6 +118,32 @@
 				750745BD2DD429DE00EBF3C8 /* Model */,
 			);
 			path = SignIn;
+			sourceTree = "<group>";
+		};
+		7510F9192DD84C4200D97B95 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7510F91C2DD84C8100D97B95 /* View */,
+				7510F91B2DD84C7600D97B95 /* ViewModel */,
+				7510F91A2DD84C6E00D97B95 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7510F91B2DD84C7600D97B95 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				7510F91F2DD84EE200D97B95 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7510F91C2DD84C8100D97B95 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7510F91D2DD84ECC00D97B95 /* HomeView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		756C544D2DD1698900EFE89B = {
@@ -145,6 +181,7 @@
 				750745BD2DD429DE00EBF3C8 /* Model */,
 				750745BE2DD429F100EBF3C8 /* View */,
 				750745BF2DD429FA00EBF3C8 /* ViewModel */,
+				7510F91A2DD84C6E00D97B95 /* Model */,
 			);
 			name = Habits;
 			packageProductDependencies = (
@@ -204,7 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				750745C92DD42D1900EBF3C8 /* SplashViewRouter.swift in Sources */,
+				7510F9202DD84EE200D97B95 /* HomeViewModel.swift in Sources */,
 				750745B72DD4297E00EBF3C8 /* HabitsApp.swift in Sources */,
+				7510F91E2DD84ECC00D97B95 /* HomeView.swift in Sources */,
 				750745B82DD4297E00EBF3C8 /* SplashUIState.swift in Sources */,
 				750745B92DD4297E00EBF3C8 /* SplashView.swift in Sources */,
 				750745BA2DD4297E00EBF3C8 /* SplashViewModel.swift in Sources */,

@@ -8,7 +8,14 @@ class SignInViewModel: ObservableObject {
     func signIn(email: String, password: String) {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            self.uiState = .goToHomeScreen
+            self.uiState = .error("Erro Meu filho")
+//            self.uiState = .goToHomeScreen
         }
+    }
+}
+
+extension SignInViewModel{
+    func homeView() -> some View {
+        return SignInViewRouter.makeSignInview()
     }
 }
